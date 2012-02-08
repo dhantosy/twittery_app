@@ -9,7 +9,7 @@ gem 'gravatar_image_tag', '0.1.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'therubyracer'
-gem 'sqlite3'
+
 gem 'pg'
 
 group :development do
@@ -17,7 +17,8 @@ group :development do
   gem 'annotate',
       :git => 'git://github.com/jeremyolliver/annotate_models.git',
       :branch => 'rake_compatibility'
-    
+  gem 'sqlite3'
+
 end
 
 group :test do
