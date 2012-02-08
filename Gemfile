@@ -10,6 +10,7 @@ gem 'gravatar_image_tag', '0.1.0'
 
 gem 'therubyracer'
 gem 'sqlite3'
+gem 'pg'
 
 group :development do
   gem 'rspec-rails'
