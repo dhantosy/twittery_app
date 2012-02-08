@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.0.rc2'
+gem "database_cleaner", "~> 0.7.1"
+gem 'gravatar_image_tag', '0.1.0'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,6 +22,7 @@ end
 group :test do
   gem 'rspec'
   gem 'webrat' , '0.7.1'
+  gem 'factory_girl_rails', '1.0'
 end
 
 
