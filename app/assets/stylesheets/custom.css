@@ -188,3 +188,13 @@ div.field, div.actions {
     font-size: 12px;
     list-style: circle;
 }
+
+/* All Users */
+
+ul.users {
+  margin-top: 1em;
+}
+
+.users li {
+  list-style: none;
+}

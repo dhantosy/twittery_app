@@ -63,8 +63,7 @@ describe User do
     user_with_duplicate_email.should_not be_valid
   end
 
-describe  "password validation" do
-
+ describe  "password validation" do
 
     it "should require a password" do
       User.new(@attr.merge(:password => "", :password_confirmation => "")).
@@ -101,7 +100,8 @@ describe "password encryption" do
   
   it "should set the encrypted password" do
     @user.encrypted_password.should_not be_blank
-    end
+  end
+end
   
 describe "has_password? method" do
 
@@ -120,10 +120,10 @@ describe "has_password? method" do
 
   it "should be false if the password don't match" do
     @user.password.should_not equal("invalid")
-      end
-    end
+  end
+end
 
-describe "authenticate method" do
+ describe "authenticate method" do
 
   before(:each) do
     DatabaseCleaner.clean
@@ -144,21 +144,29 @@ describe "authenticate method" do
     wrong_password_user.should be_nil
   end
 
-      it "should return the user on email/password match" do
-        User.authenticate(@attr[:email], @attr[:password]).should == @user
+   it "should return the user on email/password match" do
+     User.authenticate(@attr[:email], @attr[:password]).should == @user
+   end
+ end
+
+  describe "admin attribute" do
+
+    before(:each) do
+      DatabaseCleaner.clean
+      @user = User.create!(@attr)
+    end
+
+    it "should respond to admin" do
+      @user.should respond_to(:admin)
+    end
+
+    it "should not be an admin by default" do
+      @user.should_not be_admin
+    end
+
+    it "should be convertible to an admin" do
+      @user.toggle!(:admin)
+      @user.should be_admin
       end
     end
   end
-end
-
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#
-
