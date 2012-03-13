@@ -4,6 +4,7 @@ gem 'rails', '3.2.0.rc2'
 gem "database_cleaner", "~> 0.7.1"
 gem 'gravatar_image_tag', '0.1.0'
 gem 'will_paginate', '3.0.3'
+gem 'jquery-rails'
 
 
 # Bundle edge Rails instead:
@@ -37,8 +38,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

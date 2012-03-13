@@ -267,6 +267,7 @@ render_views
         response.should redirect_to(root_path)
       end
     end
+  end
 
   describe "DELETE 'destroy'" do
 
